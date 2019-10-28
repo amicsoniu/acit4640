@@ -76,14 +76,14 @@ setup_pxe () {
 pxe_files () {
     ssh -i acit_admin_id_rsa -p 50222 admin@localhost sudo chown admin /var/www/lighttpd
     scp -i acit_admin_id_rsa -P 50222 ks.cfg admin@localhost:/var/www/lighttpd
-    scp -r -i ~/.ssh/acit_admin_id_rsa -P 50222 support admin@localhost:/var/www/lighttpd
-    scp -r -i ~/.ssh/acit_admin_id_rsa -P 50222 app_setup.sh admin@localhost:/var/www/lighttpd/support
-	ssh -i ~/.ssh/acit_admin_id_rsa -p 50222 admin@localhost sudo chown -R lighttpd:wheel /var/www/lighttpd
-	ssh -i ~/.ssh/acit_admin_id_rsa -p 50222 admin@localhost sudo chown -R admin:admin /var/www/lighttpd/support
-	ssh -i ~/.ssh/acit_admin_id_rsa -p 50222 admin@localhost sudo chmod 755 /var/www/lighttpd/support/nginx.conf
-	ssh -i ~/.ssh/acit_admin_id_rsa -p 50222 admin@localhost sudo chmod 755 /var/www/lighttpd/support/todoapp.service
-    ssh -i ~/.ssh/acit_admin_id_rsa -p 50222 admin@localhost sudo chmod 755 /var/www/lighttpd/support/app_setup.sh
-	ssh -i ~/.ssh/acit_admin_id_rsa -p 50222 admin@localhost sudo chmod 755 /var/www/lighttpd/ks.cfg
+    scp -r -i acit_admin_id_rsa -P 50222 support admin@localhost:/var/www/lighttpd
+    scp -r -i acit_admin_id_rsa -P 50222 app_setup.sh admin@localhost:/var/www/lighttpd/support
+	ssh -i acit_admin_id_rsa -p 50222 admin@localhost sudo chown -R lighttpd:wheel /var/www/lighttpd
+	ssh -i acit_admin_id_rsa -p 50222 admin@localhost sudo chown -R admin:admin /var/www/lighttpd/support
+	ssh -i acit_admin_id_rsa -p 50222 admin@localhost sudo chmod 755 /var/www/lighttpd/support/nginx.conf
+	ssh -i acit_admin_id_rsa -p 50222 admin@localhost sudo chmod 755 /var/www/lighttpd/support/todoapp.service
+    ssh -i acit_admin_id_rsa -p 50222 admin@localhost sudo chmod 755 /var/www/lighttpd/support/app_setup.sh
+	ssh -i acit_admin_id_rsa -p 50222 admin@localhost sudo chmod 755 /var/www/lighttpd/ks.cfg
 }
 
 start_vm () {
