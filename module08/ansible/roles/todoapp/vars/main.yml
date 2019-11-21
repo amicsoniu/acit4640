@@ -1,0 +1,6 @@
+todoapp_user_name: todo-app
+todoapp_user_password: Password
+todoapp_repository: https://github.com/timoguic/ACIT4640-todo-app.git
+mongo_hostname: localhost
+mongodb_instance: acit4640
+todoapp_service_port: 8080
